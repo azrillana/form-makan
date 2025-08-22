@@ -1,0 +1,11 @@
+services:
+  form-makan:
+    build: .
+    container_name: form-makan
+    ports:
+      - "8000:8000"
+    environment:
+      TZ: "Asia/Jakarta"
+    volumes:
+      - /data/makan:/data/makan
+    restart: unless-stopped

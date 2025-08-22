@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Form Pemilihan Tempat Makan</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <main class="card">
+    <h1>Form Pemilihan Tempat Makan</h1>
+
+    <form id="makanForm" autocomplete="on">
+      <label for="nama">Masukan Nama Anda</label>
+      <input id="nama" name="nama" type="text" placeholder="cth: Azril" required minlength="2" maxlength="80" />
+
+      <label>Pilihan Tempat Makan</label>
+      <div class="choices" role="radiogroup" aria-label="Pilihan Tempat Makan">
+        <label class="radio">
+          <input type="radio" name="resto" value="Srasi Restoran" required />
+          <span>
+            Srasi Restoran 
+            <span class="lokasi">Karawaci, Tangerang</span>
+          </span>
+        </label>
+        <label class="radio">
+          <input type="radio" name="resto" value="Steak 21" />
+          <span>
+            Steak 21
+            <span class="lokasi">Tangerang City Mall, Tangerang</span>
+          </span>
+        </label>
+        <label class="radio">
+          <input type="radio" name="resto" value="Meatguy Steakhouse" />
+          <span>
+            Meatguy Steakhouse
+            <span class="lokasi">Jauh njir</span>
+          </span>
+        </label>
+      </div>
+      <button type="submit">Kirim</button>
+      <div id="status" class="status" aria-live="polite"></div>
+    </form>
+
+    <div id="popup" class="popup hidden">
+      <div class="popup-content">
+        <img id="popup-img" src="{{ url_for('static', filename='info.png') }}" alt="Info">
+        <p id="popup-msg">Pesan di sini</p>
+        <button id="closePopup">OK</button>
+      </div>
+    </div>
+
+    <footer>@ Form Makan - Made By Jackie Chan</footer>
+  </main>
+
+  <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>
